@@ -247,6 +247,23 @@ nav ul li{
         height: auto;
     }
 }
+.links{
+    display:none;
+    text-align: left;
+}
+
+
+@media (max-width: 600px){
+
+    .gamevids{
+        display:none;
+    }
+
+    .links{
+        display: block;
+    }
+
+}
 
 @media (max-width: 600px){
     nav{
