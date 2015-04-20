@@ -1,7 +1,19 @@
+
 body, html{
     font-family: "Source Sans Pro";
     height: 100%;
+    color: #4C4C4C;
 }
+
+.download{
+    text-align: right;
+    width: 100%;
+    float:right;
+    margin-bottom: 30px;
+    font-family: "Unica One";
+    font-size: 2em;
+}
+
 .name{
     text-align:center;
     font-size: 5.5em;
@@ -11,10 +23,46 @@ body, html{
     line-height: 60px;
     color: $brand-color;
 }
+.caption{
+    font-size:.9em;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
+
+nav a{
+    &,
+    &:visited {
+        font-family: "Unica One";
+        text-transform: uppercase;
+        color: #8DB554;
+        font-size: 1.2em;    
+    }
+
+    &:hover,
+    &:active {
+        text-decoration: none;
+        color: #4A5E2C;
+    }
+}
+
+a{
+    &,
+    &:visited {
+        color: #8DB554;
+    }
+
+    &:hover,
+    &:active {
+        text-decoration: none;
+        color: #4A5E2C;
+    }
+}
+
 
 h2{
     // font-style: italic;
-    color: #F0D6FF;
+    color: #E6D6EF;
     font-size: 4em;
     font-weight: bold;
     line-height: 25px;
@@ -28,7 +76,7 @@ h2{
 }
 .site-header{
     clear: both;
-    width: 100%;
+    position: relative;
     margin-top: 10%;
     height: calc(100% - 10% - 60px);
     text-align:center;
@@ -36,9 +84,10 @@ h2{
 
 .circle{
     width: 150px;
-    border-radius: 150px;
+    background-color: #ccc;
+    border-radius: 50%;
     margin: 20px auto;
-    border: 6px solid #ccc;
+    border: 9px solid #ccc;
 }
 
 .tagline{
@@ -50,9 +99,7 @@ h2{
     font-weight: normal;
     font-size: 1.1em;
 }
-.gfyCtrlBox{
-    z-index: 1000;
-}
+
 .about{
     margin: 0 auto;
     width: 50%;
@@ -64,32 +111,76 @@ h2{
     width: 100%;
     height: 100%;
     z-index: -1;
-    transform: skew(0, 5deg);
+    transform: skew(0, 6deg);
     -webkit-transform: skew(0, 6deg);
     background: #FBF4FF;
 }
 
 .container {
     position: relative;
-    width: 100%;
     margin-top: 10px;
     margin-bottom: 60px;
     padding-bottom: 100px;
 }
 
+.mamafooter{
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footertext{
+    width: 60%;
+    text-align:right;
+    position: absolute;
+    bottom: 100px;
+    z-index: 100;
+}
+
+.footer nav{
+    bottom: 0;
+    top: auto;
+}
+
+.footer::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    transform: skew(0, -6deg);
+    -webkit-transform: skew(0, -6deg);
+    background: #FBF4FF;
+    margin-top: 80px;
+}
+// .footerskew {
+//     transform: skew(0, -6deg);
+//     -webkit-transform: skew(0, -6deg);
+//     background: #FBF4FF;
+//     width: 100%;
+//     height: 400px;
+//     margin-top:200px;
+// }
+.footer{
+    height: 200px;
+    margin: 20px auto;
+}
+
 .education, .proficiencies {
     width: 50%;
+    text-align: left;
 }
 
 .experience, .projects, .resume-title {
     flex: 1 100%;
 }
 
+
 .resume {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   margin: 10px auto;
+  margin-top: 30px;
   padding: 20px 20px;
   padding-bottom: 10px;
   position: relative;
@@ -113,26 +204,104 @@ h2{
 .resume-title{
     padding-top: 80px;
 }
+
+
 .portfolio-tagline{
     font-family: "Times New Roman";
     font-style: italic;
     font-size: 1.2em;
-    color: $subtitle;
+    color: $grey-color;
+    text-align: left;
 }
 
 nav{
-    position: absolute;
-    right: 70px;
-    top: 30px;
+    text-align:center;
+    padding-top: 20px;
+}
+
+nav ul li:first-child{
+    padding-left: 0px;
+}
+
+.spacer{
+    margin: 5% 0;
+    min-height: 10%;
 }
 
 nav ul{
     list-style-type:none;
+    margin: 0px;
+    margin-left: 0px;
+    padding: 0px;
 }
 nav ul li{
     display: inline-block;
     padding-left: 20px;
 }
+
+@media (max-width: 350px){
+    main{
+        margin-top:100px;
+    }
+    .site-header{
+        height: auto;
+    }
+}
+
+@media (max-width: 600px){
+    nav{
+        position: relative;
+        right: auto;
+        top: auto;
+        text-align: center;
+        margin: 0;
+    }
+
+    .download{
+        text-align:center;
+    }
+
+    .about{
+        width: 90%;
+    }
+
+    .resume{
+        width: 80%;
+        flex-flow: column wrap;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .education, .proficiencies{
+        display:block;
+        width: 100%;
+    }
+
+    h2{
+        text-align:center;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    .portfolio{
+        width: 80%;
+    }
+
+    .flexy{
+        flex-wrap: wrap;
+        flex-flow: column wrap;
+    }
+    .flexy img{
+        flex: 1 1;
+    }
+
+}
+
+.actions{
+    text-align:right;
+    float:right;
+}
+
 
 .contact-info{
     // float:right;
@@ -150,17 +319,13 @@ nav ul li{
     }
 }
 
-.resume{
-    color: $grey-color;
-    font-family: Arial;
-}
-
 h3{
         clear:left;
-        font-family: 'Oswald', sans-serif;
-        font-size: 25px;
-        color: #231f20;
+        font-size: 1.5em;
+        font-family: "Oswald";
+        color: $brand-color;
         margin: 0;
+        text-align: left;
         padding: 0;
     }
 h4{
@@ -168,6 +333,7 @@ h4{
         color: #000;
         font-size: 18px;
         font-style: italic; 
+        text-align:left;
         margin: 0px;
     }
     .resume .proficiencies{
@@ -182,7 +348,7 @@ h4{
     }
     .education ul{
             list-style:none;
-            margin: 0;
+            padding-left: 0;
         }
     .resume .position{
         font-family: "Times New Roman";
@@ -192,7 +358,7 @@ h4{
     }
     .resume .location{
         font-family: "Times New Roman";
-        color: #ccc;
+        color: $grey-color;
     }
 
 
