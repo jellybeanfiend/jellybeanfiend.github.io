@@ -2,25 +2,43 @@
 body, html{
     font-family: "Source Sans Pro";
     height: 100%;
-    color: #4C4C4C;
+    color: $text-color;
 }
 
 .download{
+    font-family: "Unica One";
+    font-size: 2em;
+}
+
+
+.download-resume{
+    position: absolute;
+    top: 0;
+    transform: skew(0, 6deg);
+    text-align: center;
+    background-color: #FCCB38;
+    width: 100%;
+}
+
+.download-portfolio{
     text-align: right;
     width: 100%;
     float:right;
     margin-bottom: 30px;
-    font-family: "Unica One";
-    font-size: 2em;
+}
+
+.download-resume:hover{
+    color: $link-color;
+    background-color: rgba(255, 215, 94, 1);
 }
 
 .name{
     text-align:center;
     font-size: 5.5em;
     font-family: "Sacramento";
-    margin: 0;
+    margin: 10px;;
     padding: 0;
-    line-height: 60px;
+    line-height: 68px;
     color: $brand-color;
 }
 .caption{
@@ -35,34 +53,34 @@ nav a{
     &:visited {
         font-family: "Unica One";
         text-transform: uppercase;
-        color: #8DB554;
+        color: $link-color;
         font-size: 1.2em;    
     }
 
     &:hover,
     &:active {
         text-decoration: none;
-        color: #4A5E2C;
+        color: darken($link-color, 25%);
     }
 }
 
 a{
     &,
     &:visited {
-        color: #8DB554;
+        color: $link-color;
     }
 
     &:hover,
     &:active {
         text-decoration: none;
-        color: #4A5E2C;
+        color: darken($link-color, 25%);
     }
 }
 
 
 h2{
     // font-style: italic;
-    color: #E6D6EF;
+    color: $subtitle;
     font-size: 4em;
     font-weight: bold;
     line-height: 25px;
@@ -77,17 +95,17 @@ h2{
 .site-header{
     clear: both;
     position: relative;
-    margin-top: 10%;
+    margin-top: 5%;
     height: calc(100% - 10% - 60px);
     text-align:center;
 }
 
 .circle{
     width: 150px;
-    background-color: #ccc;
+    background-color: #529EA6;
     border-radius: 50%;
     margin: 20px auto;
-    border: 9px solid #ccc;
+    border: 9px solid #529EA6;
 }
 
 .tagline{
@@ -95,7 +113,7 @@ h2{
     padding: 0;
     text-align:center;
     font-family: "Source Sans Pro";
-    color: #01A2A6;
+    color: $subtitle;
     font-weight: normal;
     font-size: 1.1em;
 }
@@ -113,7 +131,7 @@ h2{
     z-index: -1;
     transform: skew(0, 6deg);
     -webkit-transform: skew(0, 6deg);
-    background: #FBF4FF;
+    background: $section-bg-color;
 }
 
 .container {
@@ -149,7 +167,7 @@ h2{
     height: 400px;
     transform: skew(0, -6deg);
     -webkit-transform: skew(0, -6deg);
-    background: #FBF4FF;
+    background: $section-bg-color;
     margin-top: 80px;
 }
 // .footerskew {
@@ -239,10 +257,12 @@ nav ul li{
     padding-left: 20px;
 }
 
-@media (max-width: 350px){
+@media (max-width: 440px){
+    
     main{
         margin-top:100px;
     }
+
     .site-header{
         height: auto;
     }
@@ -272,10 +292,6 @@ nav ul li{
         top: auto;
         text-align: center;
         margin: 0;
-    }
-
-    .download{
-        text-align:center;
     }
 
     .about{
@@ -375,7 +391,8 @@ h4{
     }
     .resume .location{
         font-family: "Times New Roman";
-        color: $grey-color;
+        color: $grey-color-dark;
+        float:right;
     }
 
 
