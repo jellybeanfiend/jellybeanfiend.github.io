@@ -375,12 +375,12 @@ h4{
 
 
 .flexy img{
-    width: 100%;
-    height: auto;
+    width: 32%;
     margin: 1px;
 }
 .flexy{
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-start;
+    justify-content: center;
 }
